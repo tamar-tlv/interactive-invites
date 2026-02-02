@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mode {
+    display: none;
+}
+
+.mode.active {
+    display: block;
+}
+
+/* Creation Mode Styles */
+#creationMode {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+#creationMode h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* View Mode Styles */
+.invitation-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.invitation-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.invitation-header h2 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.event-icon {
+    font-size: 4em;
+    margin: 20px 0;
+}
+
+.invitation-body {
+    margin-bottom: 30px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.detail-row .label {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.message-box {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.message-box p {
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Scratch Card Styles */
+.scratch-card-section {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.scratch-card-section h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.scratch-card-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 200px;
+}
+
+#scratchCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.scratch-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    border-radius: 12px;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.scratch-instruction {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* RSVP Section */
+.rsvp-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.hosted-by {
+    font-size: 1.1em;
+    color: #666;
+}
+
+.hosted-by span {
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Sharing Section */
+.sharing-section {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.sharing-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-share {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-share:hover {
+    transform: translateY(-2px);
+}
+
+.btn-share.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.btn-share.whatsapp:hover {
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+.btn-share.email {
+    background: #EA4335;
+    color: white;
+}
+
+.btn-share.email:hover {
+    box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+}
+
+.btn-share.copy {
+    background: #4285F4;
+    color: white;
+}
+
+.btn-share.copy:hover {
+    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 15px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-in.delay-3 {
+    animation-delay: 0.6s;
+}
+
+.fade-in.delay-4 {
+    animation-delay: 0.8s;
+}
+
+/* Confetti */
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #667eea;
+    animation: confetti-fall 3s linear forwards;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #creationMode,
+    .invitation-card {
+        padding: 20px;
+    }
+
+    .invitation-header h2 {
+        font-size: 1.8em;
+    }
+
+    .event-icon {
+        font-size: 3em;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+    }
+
+    .btn-share {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Scratch effect revealed indicator */
+.scratch-revealed {
+    animation: revealPulse 0.5s ease-out;
+}
+
+@keyframes revealPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
