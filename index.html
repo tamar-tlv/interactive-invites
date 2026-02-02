@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Invitations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Creation Mode -->
+        <div id="creationMode" class="mode active">
+            <h1>✨ Create Your Interactive Invitation ✨</h1>
+            
+            <form id="invitationForm">
+                <div class="form-group">
+                    <label for="eventType">Event Type:</label>
+                    <select id="eventType" required>
+                        <option value="birthday">🎂 Birthday Party</option>
+                        <option value="wedding">💒 Wedding</option>
+                        <option value="anniversary">💑 Anniversary</option>
+                        <option value="party">🎉 Party</option>
+                        <option value="baby-shower">👶 Baby Shower</option>
+                        <option value="graduation">🎓 Graduation</option>
+                        <option value="other">🎊 Other Event</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="hostName">Host Name:</label>
+                    <input type="text" id="hostName" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventName">Event Name/Title:</label>
+                    <input type="text" id="eventName" placeholder="e.g., Sarah's 30th Birthday Bash" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDate">Date:</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventTime">Time:</label>
+                    <input type="time" id="eventTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" placeholder="123 Party Street, City" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Personal Message:</label>
+                    <textarea id="message" rows="4" placeholder="Your invitation message..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="scratchMessage">Scratch Card Surprise Message:</label>
+                    <textarea id="scratchMessage" rows="2" placeholder="Hidden message revealed by scratching..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="backgroundColor">Theme Color:</label>
+                    <input type="color" id="backgroundColor" value="#ff6b9d">
+                </div>
+
+                <button type="submit" class="btn-primary">Create Invitation</button>
+            </form>
+        </div>
+
+        <!-- View Mode -->
+        <div id="viewMode" class="mode">
+            <div class="invitation-card">
+                <div id="confetti-container"></div>
+                
+                <div class="invitation-header fade-in">
+                    <h2 id="inviteEventName">Sarah's Birthday Party</h2>
+                    <div class="event-icon" id="eventIcon">🎂</div>
+                </div>
+
+                <div class="invitation-body fade-in delay-1">
+                    <div class="detail-row">
+                        <span class="label">📅 Date:</span>
+                        <span id="inviteDate">January 15, 2026</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">⏰ Time:</span>
+                        <span id="inviteTime">7:00 PM</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">📍 Location:</span>
+                        <span id="inviteLocation">123 Party Street</span>
+                    </div>
+                    <div class="message-box">
+                        <p id="inviteMessage">You're invited to celebrate!</p>
+                    </div>
+                </div>
+
+                <div class="scratch-card-section fade-in delay-2">
+                    <h3>🎁 Scratch to Reveal a Surprise!</h3>
+                    <div class="scratch-card-container">
+                        <canvas id="scratchCanvas"></canvas>
+                        <div id="scratchReveal" class="scratch-reveal"></div>
+                    </div>
+                    <p class="scratch-instruction">Use your mouse or finger to scratch</p>
+                </div>
+
+                <div class="rsvp-section fade-in delay-3">
+                    <p class="hosted-by">Hosted by <span id="inviteHost">Sarah</span></p>
+                </div>
+
+                <div class="sharing-section fade-in delay-4">
+                    <h3>Share this invitation:</h3>
+                    <div class="share-buttons">
+                        <button id="shareWhatsApp" class="btn-share whatsapp">
+                            <span>📱</span> WhatsApp
+                        </button>
+                        <button id="shareEmail" class="btn-share email">
+                            <span>✉️</span> Email
+                        </button>
+                        <button id="copyLink" class="btn-share copy">
+                            <span>🔗</span> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+                <button id="createNew" class="btn-secondary">Create New Invitation</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
