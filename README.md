@@ -25,7 +25,7 @@ A beautiful, interactive web-based system for creating and sharing event invitat
 1. Push this repository to GitHub
 2. Go to repository Settings → Pages
 3. Select your branch and save
-4. Your invitation system will be live at `https://yourusername.github.io/interactive-invites`
+4. Your invitation system will be live at `https://tamar-tlv.github.io/interactive-invites`
 
 ### Option 3: Deploy to any web server
 Simply upload all files to your web server and access `index.html`
